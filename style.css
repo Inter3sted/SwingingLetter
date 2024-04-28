@@ -1,0 +1,160 @@
+body {
+  display: flex;
+  flex-direction: column; /* This will stack children vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+/* Swinging Letter */
+.word {
+  position: relative;
+  font-size: 6rem;
+  padding-right: 100px;
+}
+
+.swing {
+  position: absolute;
+  bottom: -5%;
+
+  transform-origin: center top;
+  animation: swing 1s infinite alternate;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+.tea {
+  padding: 20px 30px 20px 56px; /* Adjusted padding for a balanced look */
+  color: black;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 80px; /* Space around the box */
+  max-width: 30%; /* Limit the width */
+  box-sizing: border-box; /* Makes sure padding and border are included in the total width and height */
+}
+
+/* Teapot styles */
+.teapot {
+  font-size: 10rem;
+  position: relative;
+}
+
+.teapot::before {
+  padding-top: 220px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.3em;
+  color: black;
+}
+
+/* Common styles for status codes */
+.status-code {
+  font-size: 10rem;
+  position: relative;
+  margin: 20px 0;
+}
+
+.status-code::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.3em;
+  color: #f4f4f4;
+}
+
+/* Styles specific to 200 OK */
+.thumbs-up::before {
+  padding-top: 220px;
+  content: "200";
+  color: black;
+}
+
+/* Styles specific to 300 Multiple Choices */
+.fork-road::before {
+  padding-top: 220px;
+  content: "300";
+  color: black;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 771px) {
+  /* This will target screens with a width of up to 768px (typical tablet breakpoint) */
+  .word {
+    font-size: 4rem;
+    padding-right: 50px;
+  }
+
+  .tea {
+    padding: 10px 15px 10px 28px;
+    margin: 40px;
+    max-width: 90%; /* Increase width for mobile */
+  }
+
+  .teapot {
+    font-size: 6rem;
+  }
+
+  .fork-road::before,
+  .teapot::before {
+    padding-top: 130px;
+  }
+}
+@media (min-width: 768px) and (max-width: 902px) {
+  .thumbs-up {
+    margin-top: 20px; /* Add some margin to the top to prevent cutting off */
+  }
+
+  .thumbs-up::before {
+    padding-top: 150px; /* Adjust the padding to position the number correctly */
+  }
+
+  .status-code {
+    font-size: 8rem; /* Adjust the font size if necessary */
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust the font size for the h1 tag */
+    margin-top: 20px; /* Add some margin to ensure it doesn't get cut off */
+  }
+}
+
+.error-container {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.error-code {
+  font-size: 4rem;
+  color: #d9534f; /* Red color to indicate error */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #666;
+}
